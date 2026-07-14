@@ -9,109 +9,81 @@ const EVENT_DATA = {
   interventions: [
     {
       id: 1,
-      time: "20:30 - 22:30",
       name: "Intervento 1",
       turno: "Turno 1",
-      description: "Momento della serata da concordare (ad esempio welcome ospiti)",
+      description: "Momento della serata da concordare (dalle 20:30 alle 00:30)",
       alternatives: {
         A: {
-          name: "Farfalle Luminose Elegance",
-          description: "Performers su trampoli con spettacolari ali di organza bianca giganti dotate di micro-LED a luce calda/fredda. Coreografia fluttuante adatta all'atmosfera del tramonto sardo. Outfit scenografico ad alta visibilità.",
-          mediaUrl: "https://drive.google.com/file/d/1-u-G877_aB_12345/view",
-          audioUrl: "https://drive.google.com/file/d/1-a-A888_zY_54321/view"
+          name: "Diamond Ventagli",
+          description: "Performance elegante e luminosa con magnifici ventagli giganti, perfetti per creare un'atmosfera magica a inizio serata.",
+          mediaUrl: ["Serata A/1/VENTAGLI (4).JPG", "Serata A/1/VENTAGLI (8).JPG"],
+          audioUrl: "Serata A/1/01 - DIAMOND VENTAGLI.mp3"
         },
         B: {
-          name: "Mirror Performance Sunset",
-          description: "Performer in costumi interamente ricoperti di tessere a specchio geometriche che riflettono i raggi del sole calante e i primi fari dorati del locale, creando riflessi rotanti sulla terrazza del CUE.",
-          mediaUrl: "",
-          audioUrl: ""
-        },
-        C: {
-          name: "Violino Elettrico LED Live",
-          description: "Violinista solista con abito d'alta moda e un violino elettrico trasparente retroilluminato a LED. Esecuzione live di cover deep house e lounge di hit mondiali.",
-          mediaUrl: "",
-          audioUrl: ""
+          name: "Michael Jackson Dance",
+          description: "Un'esibizione energica e iconica dedicata al Re del Pop, con coreografie spettacolari e costumi a tema.",
+          mediaUrl: ["Serata B/1/MICHAEL JACKSON  (1).JPG", "Serata B/1/MICHAEL JACKSON  (2).JPG"],
+          audioUrl: "Serata B/1/01 - MICHEAL JACKSON.MP3"
         }
       }
     },
     {
       id: 2,
-      time: "20:30 - 22:30",
       name: "Intervento 2",
       turno: "Turno 1",
-      description: "Momento della serata da concordare (ad esempio cena)",
+      description: "Momento della serata da concordare (dalle 20:30 alle 00:30)",
       alternatives: {
         A: {
-          name: "Luminous Ballet & Light Stars",
-          description: "Ballerine classiche che si esibiscono in coreografie moderne indossando tutù realizzati in fibra ottica ed elementi LED programmabili a tempo di musica, creando geometrie di luce al buio.",
-          mediaUrl: "",
-          audioUrl: ""
+          name: "Sfere Luminose",
+          description: "Una performance ipnotica con sfere luminose che disegnano scie di luce nel buio, ideale per accompagnare la cena.",
+          mediaUrl: ["Serata A/2/SFERE LUMINOSE .PNG", "Serata A/2/SFERE LUMINOSE .jpg"],
+          audioUrl: "Serata A/2/02 - SFERE LUMINOSE.mp3"
         },
         B: {
-          name: "Laser Harp & Live Vocals",
-          description: "Un performer suona un'arpa fatta interamente di raggi laser verdi e viola, mentre una cantante solista intona arie d'opera in chiave electro-pop rock. I laser reagiscono fisicamente al tocco delle dita.",
-          mediaUrl: "",
-          audioUrl: ""
-        },
-        C: {
-          name: "Sand Art Storytelling Live",
-          description: "Un'artista della sabbia realizza disegni in tempo reale su un tavolo luminoso. Le immagini, proiettate sugli schermi di CUE Porto Cervo, raccontano una suggestiva storia estiva sarda accompagnata da pianoforte dal vivo.",
-          mediaUrl: "",
-          audioUrl: ""
+          name: "Singin' in the Rain",
+          description: "Rivisitazione moderna del grande classico, un'esibizione teatrale e coinvolgente con coreografie sotto la 'pioggia'.",
+          mediaUrl: ["Serata B/2/SINGING (1).JPG", "Serata B/2/SINGING (3).PNG"],
+          audioUrl: "Serata B/2/02 - SINGIN IN THE RAIN.mp3"
         }
       }
     },
     {
       id: 3,
-      time: "22:30 - 00:30",
       name: "Intervento 3",
       turno: "Turno 2",
-      description: "Momento della serata da concordare (ad esempio gran finale)",
+      description: "Momento della serata da concordare (dalle 20:30 alle 00:30)",
       alternatives: {
         A: {
-          name: "Laser Show Immersivo 3D & Mapping",
-          description: "Progetto multilaser ad altissima potenza che mappa le linee geometriche dell'architettura di CUE Porto Cervo, proiettando fasci 3D sopra le teste degli ospiti e tracciando il logo dorato del club in grafica laser.",
-          mediaUrl: "",
-          audioUrl: ""
+          name: "Burlesque Show",
+          description: "Uno spettacolo seducente e di gran classe, in perfetto stile Burlesque, per accendere l'energia della seconda parte della serata.",
+          mediaUrl: ["Serata A/3/BURLESQUE (1).JPG"],
+          audioUrl: "Serata A/3/03 - BURLESQUE SHOW ME HOW.mp3"
         },
         B: {
-          name: "Fire & Light Fusion Show",
-          description: "Choreografia sincronizzata di ballerini di fuoco ed effetti laser cromatici. Il calore ed energia primordiale delle fiamme si fondono con la precisione digitale dei fasci di luce Lightman.",
-          mediaUrl: "",
-          audioUrl: ""
-        },
-        C: {
-          name: "Acrobati LED Air Dance",
-          description: "Acrobati aerei si esibiscono su tessuti o cerchio a mezz'aria, indossando costumi luminescenti che cambiano colore in sincrono con i video-wall e le proiezioni ambientali della sala.",
-          mediaUrl: "",
-          audioUrl: ""
+          name: "Candyman & Womanizer",
+          description: "Performance pop esplosiva sulle note dei più grandi successi anni 2000, con costumi coloratissimi e coreografie dinamiche.",
+          mediaUrl: ["Serata B/3/CANDYMAN (3).JPG", "Serata B/3/CANDYMAN (4).JPG"],
+          audioUrl: "Serata B/3/03 - CANDYMAN - WOMANIZER.mp3"
         }
       }
     },
     {
       id: 4,
-      time: "22:30 - 00:30",
       name: "Intervento 4",
       turno: "Turno 2",
-      description: "Momento della serata da concordare (ad esempio dj set)",
+      description: "Momento della serata da concordare (dalle 20:30 alle 00:30)",
       alternatives: {
         A: {
-          name: "Mirror Dancers & LED Robots",
-          description: "Incursione in pista di ballerini in costumi specchiati da robot con teste laser ed effetti speciali criogenici. Interazione diretta con il pubblico per lanciare la festa.",
-          mediaUrl: "",
-          audioUrl: ""
+          name: "Gigi D'Alessio - Mon Amour",
+          description: "Gran finale travolgente con note pop e animazione carica di energia positiva, perfetto per scatenare il pubblico.",
+          mediaUrl: ["Serata A/4/GIGI D_ALESSIO (1).PNG", "Serata A/4/GIGI D_ALESSIO (3).PNG"],
+          audioUrl: "Serata A/4/04 - GIGI D_ALESSIO - MON AMOUR.mp3"
         },
         B: {
-          name: "Laser DJ Battle Live",
-          description: "Il DJ set viene potenziato da una regia laser che segue dal vivo i BPM (battiti al minuto) del DJ, avvolgendo la pista in una gabbia di luce futuristica programmata in tempo reale.",
-          mediaUrl: "",
-          audioUrl: ""
-        },
-        C: {
-          name: "Future Cyber LED Show",
-          description: "Performer coperti da armature robotiche LED ad altissima densità (stile Tron) che sparano raggi laser verdi direttamente dalle dita e creano illusioni ottiche di luce tra gli ospiti.",
-          mediaUrl: "",
-          audioUrl: ""
+          name: "Magalehna - Samba Do Brasil",
+          description: "Conclusione della serata con ritmi brasiliani incandescenti. Un'esplosione di piume, colori e samba pura per far ballare tutti.",
+          mediaUrl: ["Serata B/4/MAGALEHNA (1).JPG", "Serata B/4/MAGALEHNA (2).PNG"],
+          audioUrl: "Serata B/4/04 - MAGALEHNA - SAMBA DO BRASIL.MP3"
         }
       }
     }
@@ -131,7 +103,6 @@ const elEventTitle = document.getElementById("display-event-title");
 const elClientName = document.getElementById("display-client-name");
 const elEventDate = document.getElementById("display-event-date");
 const elTimelineList = document.getElementById("timeline-list");
-const elTurnoIndicator = document.getElementById("current-turno-indicator");
 const elStepName = document.getElementById("current-step-name");
 const elStepDesc = document.getElementById("current-step-description");
 const elTabNameA = document.getElementById("tab-name-A");
@@ -144,7 +115,6 @@ const elMediaViewer = document.getElementById("media-viewer-container");
 const elMediaTypeBadge = document.getElementById("media-type-badge");
 const elNativeAudio = document.getElementById("native-audio");
 const elDriveAudioContainer = document.getElementById("drive-audio-frame-container");
-const elPlaySyncBtn = document.getElementById("btn-play-sync");
 
 /* ==========================================================================
    PARSER URL GOOGLE DRIVE
@@ -208,14 +178,10 @@ function renderApp() {
   const stepData = appState.interventions.find(item => item.id === currentStep);
   if (!stepData) return;
 
-  elTurnoIndicator.textContent = stepData.turno;
   elStepName.textContent = stepData.name;
   elStepDesc.textContent = stepData.description;
 
-  // 4. Aggiorna nomi delle alternative sui pulsanti Tab
-  elTabNameA.textContent = stepData.alternatives.A.name || "Alternativa A";
-  elTabNameB.textContent = stepData.alternatives.B.name || "Alternativa B";
-  elTabNameC.textContent = stepData.alternatives.C.name || "Alternativa C";
+  // 4. Nomi delle Serate statici sui Tab
 
   // 5. Carica i dettagli dell'alternativa selezionata
   const altData = stepData.alternatives[currentAlt];
@@ -228,9 +194,6 @@ function renderApp() {
 
   // 7. Carica Audio (Musica)
   renderAudioPanel(altData.audioUrl);
-
-  // Ripristina stato di playback sincronizzato
-  resetSyncPlaybackState();
 }
 
 function renderTimeline() {
@@ -248,16 +211,15 @@ function renderTimeline() {
 
     // Aggiorna testi del pulsante
     if (stepData) {
-      item.querySelector(".timeline-time").textContent = stepData.time;
       item.querySelector(".timeline-title").textContent = stepData.name;
     }
   });
 }
 
-function renderMediaPanel(url) {
+function renderMediaPanel(urlOrUrls) {
   elMediaViewer.innerHTML = "";
 
-  if (!url) {
+  if (!urlOrUrls || (Array.isArray(urlOrUrls) && urlOrUrls.length === 0)) {
     elMediaViewer.innerHTML = `
       <div class="media-placeholder">
         <svg class="placeholder-icon" viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
@@ -271,71 +233,106 @@ function renderMediaPanel(url) {
     return;
   }
 
-  const parsed = parseMediaUrl(url);
+  const urls = Array.isArray(urlOrUrls) ? urlOrUrls : [urlOrUrls];
 
-  if (parsed.isDrive) {
-    elMediaTypeBadge.textContent = "Google Drive Embed";
-    elMediaTypeBadge.style.borderColor = "var(--cyan-laser)";
-    elMediaTypeBadge.style.color = "var(--cyan-laser)";
-    elMediaTypeBadge.style.background = "rgba(6, 182, 212, 0.1)";
+  if (urls.length > 1) {
+    elMediaTypeBadge.textContent = "Galleria Immagini";
+    elMediaTypeBadge.style.borderColor = "var(--gold-cue)";
+    elMediaTypeBadge.style.color = "var(--gold-cue)";
+    elMediaTypeBadge.style.background = "rgba(212, 175, 55, 0.1)";
+  }
 
-    const iframe = document.createElement("iframe");
-    iframe.src = parsed.embedUrl;
-    iframe.className = "media-iframe";
-    iframe.allow = "autoplay";
-    iframe.title = "Anteprima Outfit Google Drive";
-    iframe.width = "800";
-    iframe.height = "450";
-    iframe.setAttribute("loading", "lazy");
-    elMediaViewer.appendChild(iframe);
-  } else {
-    const cleanUrl = url.toLowerCase().split(/[?#]/)[0];
-    const isImage = /\.(jpg|jpeg|png|webp|gif|svg)$/.test(cleanUrl);
-    const isVideo = /\.(mp4|webm|ogg)$/.test(cleanUrl);
+  urls.forEach((url, index) => {
+    const parsed = parseMediaUrl(url);
 
-    if (isImage) {
-      elMediaTypeBadge.textContent = "Immagine Diretta";
-      elMediaTypeBadge.style.borderColor = "var(--gold-cue)";
-      elMediaTypeBadge.style.color = "var(--gold-cue)";
-      elMediaTypeBadge.style.background = "rgba(212, 175, 55, 0.1)";
-
-      const img = document.createElement("img");
-      img.src = url;
-      img.className = "media-img";
-      img.alt = "Anteprima Outfit";
-      img.width = "800";
-      img.height = "450";
-      img.setAttribute("loading", "lazy");
-      elMediaViewer.appendChild(img);
-    } else if (isVideo) {
-      elMediaTypeBadge.textContent = "Video Diretto";
-      elMediaTypeBadge.style.borderColor = "var(--purple-lightman)";
-      elMediaTypeBadge.style.color = "var(--purple-lightman)";
-      elMediaTypeBadge.style.background = "rgba(124, 58, 237, 0.1)";
-
-      const video = document.createElement("video");
-      video.src = url;
-      video.className = "media-video";
-      video.controls = true;
-      video.playsInline = true;
-      video.width = "800";
-      video.height = "450";
-      elMediaViewer.appendChild(video);
-    } else {
-      elMediaTypeBadge.textContent = "Web Link";
-      elMediaTypeBadge.style.borderColor = "var(--text-muted)";
-      elMediaTypeBadge.style.color = "var(--text-muted)";
-      elMediaTypeBadge.style.background = "rgba(255,255,255,0.05)";
+    if (parsed.isDrive) {
+      if (urls.length === 1) {
+        elMediaTypeBadge.textContent = "Google Drive Embed";
+        elMediaTypeBadge.style.borderColor = "var(--cyan-laser)";
+        elMediaTypeBadge.style.color = "var(--cyan-laser)";
+        elMediaTypeBadge.style.background = "rgba(6, 182, 212, 0.1)";
+      }
 
       const iframe = document.createElement("iframe");
-      iframe.src = url;
+      iframe.src = parsed.embedUrl;
       iframe.className = "media-iframe";
-      iframe.title = "Anteprima Contenuto Esterno";
+      iframe.allow = "autoplay";
+      iframe.title = "Anteprima Outfit Google Drive";
       iframe.width = "800";
       iframe.height = "450";
+      iframe.setAttribute("loading", "lazy");
+      if (urls.length > 1) {
+        iframe.style.flex = "1";
+        iframe.style.width = "50%";
+      }
       elMediaViewer.appendChild(iframe);
+    } else {
+      const cleanUrl = url.toLowerCase().split(/[?#]/)[0];
+      const isImage = /\.(jpg|jpeg|png|webp|gif|svg)$/.test(cleanUrl);
+      const isVideo = /\.(mp4|webm|ogg)$/.test(cleanUrl);
+
+      if (urls.length === 1) {
+        if (isImage) {
+          elMediaTypeBadge.textContent = "Immagine Diretta";
+          elMediaTypeBadge.style.borderColor = "var(--gold-cue)";
+          elMediaTypeBadge.style.color = "var(--gold-cue)";
+          elMediaTypeBadge.style.background = "rgba(212, 175, 55, 0.1)";
+        } else if (isVideo) {
+          elMediaTypeBadge.textContent = "Video Diretto";
+          elMediaTypeBadge.style.borderColor = "var(--purple-lightman)";
+          elMediaTypeBadge.style.color = "var(--purple-lightman)";
+          elMediaTypeBadge.style.background = "rgba(124, 58, 237, 0.1)";
+        }
+      }
+
+      if (isImage) {
+        const img = document.createElement("img");
+        img.src = url;
+        img.className = "media-img";
+        img.alt = "Anteprima Outfit";
+        img.width = "800";
+        img.height = "450";
+        img.setAttribute("loading", "lazy");
+        if (urls.length > 1) {
+          img.style.flex = "1";
+          img.style.width = "50%";
+        }
+        elMediaViewer.appendChild(img);
+      } else if (isVideo) {
+        const video = document.createElement("video");
+        video.src = url;
+        video.className = "media-video";
+        video.controls = true;
+        video.playsInline = true;
+        video.width = "800";
+        video.height = "450";
+        if (urls.length > 1) {
+          video.style.flex = "1";
+          video.style.width = "50%";
+        }
+        elMediaViewer.appendChild(video);
+      } else {
+        if (urls.length === 1) {
+          elMediaTypeBadge.textContent = "Web Link";
+          elMediaTypeBadge.style.borderColor = "var(--text-muted)";
+          elMediaTypeBadge.style.color = "var(--text-muted)";
+          elMediaTypeBadge.style.background = "rgba(255,255,255,0.05)";
+        }
+
+        const iframe = document.createElement("iframe");
+        iframe.src = url;
+        iframe.className = "media-iframe";
+        iframe.title = "Anteprima Contenuto Esterno";
+        iframe.width = "800";
+        iframe.height = "450";
+        if (urls.length > 1) {
+          iframe.style.flex = "1";
+          iframe.style.width = "50%";
+        }
+        elMediaViewer.appendChild(iframe);
+      }
     }
-  }
+  });
 }
 
 function renderAudioPanel(url) {
@@ -367,54 +364,8 @@ function renderAudioPanel(url) {
 }
 
 /* ==========================================================================
-   GESTIONE PLAYBACK SINCRONIZZATO
+   (Funzioni di Sync rimosse)
    ========================================================================== */
-function resetSyncPlaybackState() {
-  isPlayingAtmosphere = false;
-  elPlaySyncBtn.classList.remove("btn-primary");
-  elPlaySyncBtn.classList.add("btn-primary");
-  elPlaySyncBtn.querySelector(".play-icon").classList.remove("hidden");
-  elPlaySyncBtn.querySelector(".pause-icon").classList.add("hidden");
-  elPlaySyncBtn.querySelector("span").textContent = "Prova l'Atmosfera (Play Audio+Video)";
-}
-
-function toggleAtmospherePlayback() {
-  const videoElement = elMediaViewer.querySelector("video");
-  const iframeElement = elMediaViewer.querySelector("iframe");
-
-  if (!isPlayingAtmosphere) {
-    isPlayingAtmosphere = true;
-    elPlaySyncBtn.querySelector(".play-icon").classList.add("hidden");
-    elPlaySyncBtn.querySelector(".pause-icon").classList.remove("hidden");
-    elPlaySyncBtn.querySelector("span").textContent = "Pausa Atmosfera";
-    elPlaySyncBtn.style.boxShadow = "0 0 15px var(--purple-glow)";
-
-    if (elNativeAudio.src) {
-      elNativeAudio.play().catch(err => {
-        console.warn("Impossibile avviare automaticamente l'audio nativo.", err);
-      });
-    }
-
-    if (videoElement) {
-      videoElement.play().catch(err => console.warn("Impossibile avviare il video nativo", err));
-    } else if (iframeElement) {
-      showNotification("Avviata la musica! Fai clic su 'Play' all'interno del lettore video di Drive per sincronizzare le immagini.");
-    }
-
-  } else {
-    isPlayingAtmosphere = false;
-    elPlaySyncBtn.querySelector(".play-icon").classList.remove("hidden");
-    elPlaySyncBtn.querySelector(".pause-icon").classList.add("hidden");
-    elPlaySyncBtn.querySelector("span").textContent = "Prova l'Atmosfera (Play Audio+Video)";
-    elPlaySyncBtn.style.boxShadow = "";
-
-    elNativeAudio.pause();
-
-    if (videoElement) {
-      videoElement.pause();
-    }
-  }
-}
 
 function showNotification(message) {
   const existingToast = document.querySelector(".toast-notification");
@@ -487,9 +438,6 @@ function setupEventListeners() {
     });
   });
 
-  // Bottone Play Sincronizzato
-  elPlaySyncBtn.addEventListener("click", toggleAtmospherePlayback);
-
   // Scorciatoie da tastiera (Navigazione veloce per il presentatore)
   document.addEventListener("keydown", (e) => {
     // Tasti 1, 2, 3, 4 per cambiare Intervento
@@ -498,18 +446,12 @@ function setupEventListeners() {
       renderApp();
     }
 
-    // Tasti a, b, c per cambiare alternativa
+    // Tasti a, b per cambiare Serata
     const key = e.key.toUpperCase();
-    if (key === "A" || key === "B" || key === "C") {
+    if (key === "A" || key === "B") {
       currentAlt = key;
       const btn = document.querySelector(`.tab-btn[data-alt="${key}"]`);
       if (btn) btn.click();
-    }
-
-    // Tasto Spazio per avviare/fermare l'atmosfera
-    if (e.key === " ") {
-      e.preventDefault();
-      toggleAtmospherePlayback();
     }
   });
 }
