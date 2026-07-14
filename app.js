@@ -5,13 +5,14 @@
 const EVENT_DATA = {
   eventTitle: "Summer Season Exclusive 2026",
   clientName: "CUE Porto Cervo",
-  date: "14 Luglio 2026",
+  date: "Estate 2026",
   interventions: [
     {
       id: 1,
-      time: "20:30",
-      name: "Welcome & Sunset Cocktail",
-      description: "Accoglienza spettacolare per l'ingresso degli ospiti. Performance di grande impatto visivo adatte alla luce del crepuscolo sul mare.",
+      time: "20:30 - 22:30",
+      name: "Intervento 1",
+      turno: "Turno 1",
+      description: "Momento della serata da concordare (ad esempio welcome ospiti)",
       alternatives: {
         A: {
           name: "Farfalle Luminose Elegance",
@@ -35,9 +36,10 @@ const EVENT_DATA = {
     },
     {
       id: 2,
-      time: "21:30",
-      name: "Dinner Show Opening",
-      description: "L'inizio della cena spettacolo. Atmosfera elegante, focalizzata sull'attenzione visiva tra le portate principali.",
+      time: "20:30 - 22:30",
+      name: "Intervento 2",
+      turno: "Turno 1",
+      description: "Momento della serata da concordare (ad esempio cena)",
       alternatives: {
         A: {
           name: "Luminous Ballet & Light Stars",
@@ -61,9 +63,10 @@ const EVENT_DATA = {
     },
     {
       id: 3,
-      time: "23:30",
-      name: "The Main Act - Midnight Show",
-      description: "Il culmine artistico della serata. Spettacolo immersivo ad altissima tecnologia prima dell'inizio delle danze nel club.",
+      time: "22:30 - 00:30",
+      name: "Intervento 3",
+      turno: "Turno 2",
+      description: "Momento della serata da concordare (ad esempio gran finale)",
       alternatives: {
         A: {
           name: "Laser Show Immersivo 3D & Mapping",
@@ -87,9 +90,10 @@ const EVENT_DATA = {
     },
     {
       id: 4,
-      time: "01:00",
-      name: "Clubbing & Party Starter",
-      description: "Momento in cui la cena spettacolo si trasforma in discoteca. Energia pura per scatenare il dance floor.",
+      time: "22:30 - 00:30",
+      name: "Intervento 4",
+      turno: "Turno 2",
+      description: "Momento della serata da concordare (ad esempio dj set)",
       alternatives: {
         A: {
           name: "Mirror Dancers & LED Robots",
@@ -127,7 +131,7 @@ const elEventTitle = document.getElementById("display-event-title");
 const elClientName = document.getElementById("display-client-name");
 const elEventDate = document.getElementById("display-event-date");
 const elTimelineList = document.getElementById("timeline-list");
-const elStepNum = document.getElementById("current-step-num");
+const elTurnoIndicator = document.getElementById("current-turno-indicator");
 const elStepName = document.getElementById("current-step-name");
 const elStepDesc = document.getElementById("current-step-description");
 const elTabNameA = document.getElementById("tab-name-A");
@@ -150,12 +154,12 @@ function parseMediaUrl(url) {
   url = url.trim();
 
   let driveId = '';
-  
+
   // RegEx per intercettare gli ID dei file di Google Drive
   const filePattern = /\/file\/d\/([a-zA-Z0-9_-]+)/;
   const idQueryPattern = /[?&]id=([a-zA-Z0-9_-]+)/;
   const ucPattern = /\/uc\?.*id=([a-zA-Z0-9_-]+)/;
-  
+
   if (filePattern.test(url)) {
     driveId = url.match(filePattern)[1];
   } else if (idQueryPattern.test(url)) {
@@ -163,7 +167,7 @@ function parseMediaUrl(url) {
   } else if (ucPattern.test(url)) {
     driveId = url.match(ucPattern)[1];
   }
-  
+
   if (driveId) {
     return {
       isDrive: true,
@@ -173,7 +177,7 @@ function parseMediaUrl(url) {
       downloadUrl: `https://drive.google.com/uc?export=download&id=${driveId}`
     };
   }
-  
+
   return {
     isDrive: false,
     id: null,
@@ -204,7 +208,7 @@ function renderApp() {
   const stepData = appState.interventions.find(item => item.id === currentStep);
   if (!stepData) return;
 
-  elStepNum.textContent = currentStep;
+  elTurnoIndicator.textContent = stepData.turno;
   elStepName.textContent = stepData.name;
   elStepDesc.textContent = stepData.description;
 
@@ -234,7 +238,7 @@ function renderTimeline() {
   items.forEach((item, index) => {
     const stepNum = index + 1;
     const stepData = appState.interventions.find(s => s.id === stepNum);
-    
+
     // Aggiorna classi attive
     if (stepNum === currentStep) {
       item.classList.add("active");
@@ -252,7 +256,7 @@ function renderTimeline() {
 
 function renderMediaPanel(url) {
   elMediaViewer.innerHTML = "";
-  
+
   if (!url) {
     elMediaViewer.innerHTML = `
       <div class="media-placeholder">
@@ -351,7 +355,7 @@ function renderAudioPanel(url) {
   if (parsed.isDrive) {
     elNativeAudio.src = parsed.downloadUrl;
     elNativeAudio.classList.remove("hidden");
-    
+
     const iframe = document.createElement("iframe");
     iframe.src = parsed.embedUrl;
     iframe.title = "Anteprima Audio Google Drive";
@@ -419,7 +423,7 @@ function showNotification(message) {
   const toast = document.createElement("div");
   toast.className = "toast-notification";
   toast.textContent = message;
-  
+
   Object.assign(toast.style, {
     position: "fixed",
     bottom: "20px",
@@ -453,7 +457,7 @@ function showNotification(message) {
    SETUP DEGLI EVENT LISTENERS
    ========================================================================== */
 function setupEventListeners() {
-  
+
   // Eventi Timeline
   const timelineItems = elTimelineList.querySelectorAll(".timeline-item");
   timelineItems.forEach(item => {
@@ -466,18 +470,18 @@ function setupEventListeners() {
   // Eventi Tab Alternative (A, B, C)
   const tabContainer = document.querySelector(".tab-container");
   const tabBtns = tabContainer.querySelectorAll(".tab-btn");
-  
+
   tabBtns.forEach((btn, index) => {
     btn.addEventListener("click", () => {
       tabBtns.forEach(b => {
         b.classList.remove("active");
         b.setAttribute("aria-selected", "false");
       });
-      
+
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
       currentAlt = btn.getAttribute("data-alt");
-      
+
       tabContainer.querySelector(".tab-slider").style.setProperty("--active-index", index);
       renderApp();
     });
@@ -493,7 +497,7 @@ function setupEventListeners() {
       currentStep = parseInt(e.key);
       renderApp();
     }
-    
+
     // Tasti a, b, c per cambiare alternativa
     const key = e.key.toUpperCase();
     if (key === "A" || key === "B" || key === "C") {
